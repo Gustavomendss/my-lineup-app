@@ -14,13 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 #from django.urls import include
+from LINEUPAPP import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('', include('lineupapp.urls')),
-
+    path('', views.index, name='index'),
+    path('new-todo', views.new_todo, name="new_todo"),
+    path('mark-as-done/<int:id>', views.mark_as_done, name="mark_as_done"),
 
 ]
 '''
@@ -32,6 +34,23 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('', include('lineupapp.urls')),
+
+]
+
+
+OUUUU
+
+from django.contrib import admin
+from django.urls import include, path
+#from django.urls import include
+from LINEUPAPP import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('LINEUPAPP/', include ("LINEUPAPP.urls")),# Isso está direcionando para o seu aplicativo
+    path('', views.index, name='index'),
+    path('new-todo', views.new_todo, name="new_todo"),
+    path('mark-as-done/<int:id>', views.mark_as_done, name="mark_as_done"),
 
 ]
 

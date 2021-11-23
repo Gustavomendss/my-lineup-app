@@ -137,6 +137,7 @@ apos criação
 git remote add origin https://github.com/Gustavomendss/my-lineup-app.git
 git branch -M main
 git push -u origin main
+git push origin  # compartilha todos os arquivos no git
 
 
 

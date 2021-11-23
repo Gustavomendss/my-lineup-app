@@ -40,3 +40,6 @@ class Avaliacao(Base):
         def __str__(self):
             return f'{self.nome} avaliou o lineup {self.lineup} com a nota {self.avaliacao}'
 
+class todo(models.Model):
+    name = models.TextField(max_length=255)
+    status = models.BooleanField(default=False)
